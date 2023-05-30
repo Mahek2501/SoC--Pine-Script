@@ -1,0 +1,27 @@
+//While Loop
+
+indicator("My script")
+a = 4
+float b = 5
+c = 2
+while a < 30
+    a:= a+1
+    b:= b-1
+plot(b)
+
+
+//Break Statement
+
+indicator("My script")
+a = 0
+float b = 5
+c = 2
+
+while a < 30
+    a:= a+1
+    b:= b-1
+    if a > 25
+        break
+plot(a)
+
+
