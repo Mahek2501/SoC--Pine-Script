@@ -1,6 +1,6 @@
 indicator("My script")
 a =  5
-a := 6  //to redefine a add : othervise can't
+a := 6  // to redefine a add : othervise can't
 b = a+1
 plot(b)
 
