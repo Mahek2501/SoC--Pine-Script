@@ -1,0 +1,22 @@
+indicator("My script")
+a = 10
+float b = 5
+c = 2
+f(x,y) =>
+    sum = (x+y)/2
+k = f(a,c)
+plot(k)
+
+//OR
+
+indicator("My script")
+a = 30
+float b = 5
+c = 2
+f(x,y) =>
+    sum = (x+y)/2
+    sum2 = sum/2
+k = f(open[1],close[1]) // open[1] means open of 1 day back which is yesterday
+plot(k)
+
+
