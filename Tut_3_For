@@ -1,0 +1,9 @@
+//For Loop
+
+indicator("My script")
+a = 4
+float b = 5
+c = 2
+for i = 1 to 5 by 2 //from 1 to 5 taking 2 steps
+    b:= b +1
+plot(b)
