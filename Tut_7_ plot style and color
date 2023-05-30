@@ -1,0 +1,33 @@
+indicator("My script", overlay = true)
+a = 30
+float b = 5
+c = 2
+f(x,y) =>
+    sum = (x+y)/2
+    sum2 = sum/2
+    [sum, sum2]
+[k1,k2] = f(open,close)
+plot(k1, color = color.new(#955628, 0)) //0 is the transparency..if inc value becomes lighter and lighter
+plot(k2)
+
+//Can change style and title too
+
+indicator("My script", overlay = true)
+a = 30
+float b = 5
+c = 2
+f(x,y) =>
+    sum = (x+y)/2
+    sum2 = sum/2
+    [sum, sum2]
+[k1,k2] = f(open,close)
+plot(k1, color = color.new(#955628, 0), style = plot.style_area, title = "Experiment")
+plot(k2)
+
+
+
+
+
+
+
+
