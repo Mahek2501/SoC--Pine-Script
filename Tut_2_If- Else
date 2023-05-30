@@ -1,0 +1,54 @@
+indicator("My script")
+a = 5
+b = 5
+if a >7
+    b:= b+a
+else
+    b:= b+ 2
+plot(b)
+
+
+//Or 
+
+
+indicator("My script")
+a = 7
+b = 5
+if a >7
+    b:= b+a
+else if a > 6
+    b:= b+ 5
+else
+    b:= b+2
+plot(b)
+
+
+//And condn or OR condn
+
+
+indicator("My script")
+a = 7
+b = 5
+c = 2
+if a >7
+    b:= b+a
+else if a > 6 and c <=2
+    b:= b+ 5
+else
+    b:= b+2
+plot(b)
+
+
+
+
+indicator("My script")
+a = 4
+float b = 5
+c = 2
+if a >3
+    b:= close
+else if a > 6 and c <=2
+    b:= b+ 5
+else
+    b:= b+2
+plot(b)
