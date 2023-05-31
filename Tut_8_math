@@ -1,0 +1,8 @@
+indicator("My script", overlay = true)
+float a = 30
+float b = 5
+c = 2
+b:= math.cos(b)
+a := math.max(open, close) //there are other attributes to like highest etc
+plot(b)
+plot(a)
