@@ -1,0 +1,17 @@
+
+
+// close < lowest close of 10 days ago go long, and when close > close highest of 10 days close position
+//close all position if trasing below 100day moving average
+// enter only if markets trading above 100 day moving average
+
+//@version=5
+strategy("My strategy", overlay=true)
+buyc1 = close < ta.lowest(close[1],10)
+int buyc2 = 5
+while(close>ta.sma(close,100))
+    buyc2 := 1
+    break
+exitc = close > ta.highest(close[1], 10) or close < ta.sma(close, 100)
+switch
+    buyc1 == true and buyc2 == true => strategy.entry("long", strategy.long)
+    exitc == true => strategy.close("long")
