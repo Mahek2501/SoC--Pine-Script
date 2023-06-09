@@ -1,0 +1,19 @@
+
+//@version=5
+strategy("My Strategy", overlay=true)
+// Calculate moving averages
+shortMA = ta.sma(close, 50)
+longMA = ta.sma(close, 200)
+
+// Create conditions
+sellCondition = ta.crossunder(shortMA, longMA)
+buyCondition = ta.crossover(shortMA, longMA)
+
+// Execute trades based on conditions
+if sellCondition == true
+    strategy.entry('Sell', strategy.short) // deathcross strategy is for sell only..it indicates bearish marketwhen selling pressure increases
+if buyCondition == true
+    strategy.entry("Buy", strategy.long) 
+
+plot(shortMA, color = color.blue, linewidth = 2, title = "Short-term MA")
+plot(longMA, color = color.red , linewidth = 2, title = "Long-term MA")
