@@ -1,0 +1,12 @@
+//@version=5
+indicator("My script", overlay = true)
+
+bodysize = math.abs(open-close)
+
+// Calculate wick sizes
+upperWickSize = high - math.max(open, close)
+lowerWickSize = math.min(open, close) - low
+totalWickSize = upperWickSize + lowerWickSize
+
+dojiPattern = bodysize <= totalWickSize *0.05
+plotshape(dojiPattern, title="Doji Pattern", location=location.belowbar, color=color.blue, style = shape.labelup, text="Doji", textcolor = color.white)
