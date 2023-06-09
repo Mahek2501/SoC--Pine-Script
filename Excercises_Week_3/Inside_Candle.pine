@@ -1,0 +1,13 @@
+//@version=5
+indicator("Inside Bar", shorttitle="IB", overlay=true)
+
+prevHigh = high[1]
+prevLow = low[1]
+
+insideBar = high < prevHigh and low > prevLow
+
+// condition ? value_if_true : value_if_false
+
+bgcolor(insideBar ? color.new(color.green, 90) : na)  //this is like the if else condn , reads like if insideBar is true (?) color.new will be executed
+                                                        // else (:)its na. Also 90 is the transparency level (its from 0 to 100)
+
