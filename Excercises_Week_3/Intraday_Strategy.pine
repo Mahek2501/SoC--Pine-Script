@@ -1,0 +1,19 @@
+//@version=5
+strategy("Gap-Up/Gap-Down Strategy", overlay=true)
+
+openPrice = open
+prevClose = close[1]
+
+//as percent
+gapSize = ((openPrice - prevClose) / prevClose) * 100
+minGapSize = 2 // 2% minimum gap size
+
+longCondition = gapSize > minGapSize
+shortCondition = gapSize < -minGapSize
+
+if (longCondition)
+    strategy.order("Long", strategy.long)
+
+if (shortCondition)
+    strategy.order("Short", strategy.short)
+
