@@ -1,0 +1,7 @@
+//@version=5
+indicator("Ex 1.1 ", overlay = true)
+MA1 = ta.sma(close, 21)
+MA2 = ta.ema(close, 21)
+plot(MA1, color = color.purple)
+plot(MA2, color = color.blue)
+
