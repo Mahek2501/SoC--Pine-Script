@@ -1,0 +1,11 @@
+
+//@version=5
+indicator("macd", overlay = false)
+[macd1, signal1, hist1] = ta.macd(close, 14, 21, 9) 
+[macd2, signal2, hist2] = ta.macd(close, 41, 90, 9)
+[macd3, signal3, hist3] = ta.macd(close, 90, 200, 9)
+
+plot(macd1, color = #092889 )
+plot(macd2, color = #897869)
+plot(macd3, color = #567886)
+
