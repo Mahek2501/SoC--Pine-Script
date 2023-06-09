@@ -1,0 +1,8 @@
+//@version=5
+indicator("EX 1.3", overlay = true)
+TP = (high+ low +close)/3 //Typical Price (TP)
+[u, m , l]= ta.bb(TP, 20, 2) // 20  is the period and 2 is the no. of standard deviations
+
+plot(u)
+plot(m)
+plot(l)
